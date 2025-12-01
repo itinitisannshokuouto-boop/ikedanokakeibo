@@ -1,3 +1,4 @@
+const API_URL = "https://script.google.com/macros/s/AKfycbzqJkTWBuf7dmdoHHFJlLWz71v2H0NStiLUWIU0ahTQZl76lpkBO9N_PRf49lMk0Nb4hQ/exec"
 // 全ての取引を保存する配列
 let transactions = [];
 //DOM取得などのコード
@@ -195,4 +196,5 @@ filterModes.forEach(mode =>{
 })
 //年フィルター変更時再集計
 yearFilter.addEventListener('input', updateSummary);
+
 monthFilter.addEventListener('change',updateSummary);

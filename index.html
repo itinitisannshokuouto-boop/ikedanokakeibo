@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>家計簿アプリ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>家計簿アプリ</h1>
+
+  <form id="transaction-form">
+    <label>
+      日付：
+      <input type="date" id="date" required />
+    </label>
+    <label>
+    種類：
+      <select id="type">
+        <option value="income">収入</option>
+        <option value="expense">支出</option>
+      </select>
+    </label>
+    <label>
+    項目：
+      <input type="text" id="category" placeholder="例：食費、給料" required />
+    </label>
+    <label>
+    金額：
+      <input type="number" id="amount" required />
+    </label>
+    <label>
+    口座:
+        <select id = "account">
+            <option value = "現金">現金</option>
+            <option value = "銀行">広島銀行</option>
+            <option value = "クレカ">クレジットカード</option>
+            <option value = "PayPay">PayPay</option>
+        </select>
+    </label>
+    <button type="submit">追加</button>
+  </form>
+
+  <h2>振替</h2>
+  <form id = "transfer-form">
+    <label>
+        日付:
+        <input type = "date" id = "transfer-date" required>
+    </label>
+    <label>
+        出金口座:
+        <select id = "from-account">
+            <option value = "現金">現金</option>
+            <option value = "銀行">銀行</option>
+            <option value = "クレジットカード">クレジットカード</option>
+            <option value = "PayPay">PayPay</option>
+       </select>
+    </label>
+    <label>
+        入金口座:
+        <select id = "to-account">
+            <option value = "現金">現金</option>
+            <option value = "銀行">銀行</option>
+            <option value = "クレジットカード">クレジットカード</option>
+            <option value = "PayPay">PayPay</option>
+        </select>
+    </label>
+    <label>
+        金額:
+        <input type = "number" id = "transfer-amount" required>
+    </label>
+    <button type = "submit">振替</button>
+  </form>
+
+  <h2>月ごとの合計</h2>
+  <!--ver1.001-->
+  <div>
+    <label>
+      <input type = "radio" name = "filter-mode" value = "month" checked>月別
+    </label>
+    <label>
+      <input type = "radio" name = "filter-mode" value = "year" checked>年別
+    </label>
+  </div>
+
+  <div id = "filter-container">
+    <input type = "month" id = "month-filter">
+    <input type = "number" id = "year-filter" value = "2025" style = "display:none" placeholder="年(例:2025)">
+  </div>
+  
+  <div id="summary">
+    <!-- 合計がここに表示される -->
+  </div>
+  <h2>取引一覧</h2>
+  <div id = "transaction-list">
+    <!-- 一覧がここに表示される-->
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

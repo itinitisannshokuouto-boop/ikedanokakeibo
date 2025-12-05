@@ -64,4 +64,25 @@ body {
     max-width: 400px;
     box-shadow: 0 2px 5px rgda(0, 0, 0, 0.1);
   }
-  
+
+  /* ラジオボタンのグループ全体 */
+.radio-group {
+    display: flex;          /* 横並びにする */
+    gap: 20px;             /* ボタン同士の間隔 */
+    margin-bottom: 15px;    /* 下との隙間 */
+    align-items: center;    /* 上下の中心を揃える */
+}
+
+/* ラベル（文字とボタンのセット） */
+.radio-group label {
+    display: flex;          /* ボタンと文字を横並びに */
+    align-items: center;    /* 文字の高さをボタンに合わせる */
+    cursor: pointer;        /* マウスを乗せたら指マークに */
+    font-weight: bold;      /* 文字を太くして見やすく */
+}
+
+/* ラジオボタン本体（丸い部分） */
+.radio-group input[type="radio"] {
+    margin-right: 5px;      /* 丸と文字の間を少し空ける */
+    transform: scale(1.2);  /* ボタンを少し大きくする */
+}
